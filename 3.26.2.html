@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #root {
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap; /* flex布局换行*/
+        }
+
+        #head {
+
+            height: 100px;;
+        }
+
+        #middle {
+            display: flex; /* 采用布局换行*/
+        }
+
+        #foot {
+
+            height: 100px;
+        }
+
+        #left {
+
+            width: 300px;
+        }
+
+        #right {
+
+            width: 700px;
+        }
+
+        #tbl {
+            height: 400px;
+            width: 500px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="head"></div>
+    <div id="middle">
+        <div id="left"></div>
+        <div id="right">
+            <table id="tbl"></table>
+
+    <div id="foot">
+        <table onclick="add()" id="ff">
+            <tr>
+                <td><input type="text" name="uname">
+                男 <input type="radio" name="sex" value="man">
+                女 <input type="radio" name="sex" value="girl">
+                    <button>确定修改</button>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+
+
+    var persons = [
+        {name: "张三", age: 33, sex: '男' ,shuxing:"牛"},
+        {name: "老王", age: 45, sex: '男',shuxing:"牛"},
+        {name: "彭桂香", age: 19, sex: '女',shuxing:"兔"},
+        {name: "李卫红", age: 60, sex: '女',shuxing:"狗"},
+        {name: "王二狗", age: 5, sex: '男',shuxing:"蛇"},
+    ];
+    function showTable() {  //建立数据和表格之间的映射
+        var str = ""
+//    for(var i=0;i<persons.length;i++){
+        for (var i in persons) {
+            str += "<tr>"
+            for (var j in persons[i]) {
+                str += "<td>" + persons[i][j] + "</td>"
+            }
+
+//        if(i in persons)
+            /*    str += `
+             <tr>
+             <td>${persons[i].name}</td>
+             <td>${persons[i].age}</td>
+             <td>${persons[i].sex}</td>
+             <td>
+             <a href="javascript:del(${i})">删除</a>
+             </td>
+             </tr>
+             `;*/
+            str += `<td>
+          <a href="javascript:del(${i})">删除</a>
+          </td>`
+               str += `<td>
+          <a href="javascript:uptate(${i})">更新</a>
+          </td>`
+        }
+        document.querySelector("#tbl").innerHTML = str;
+    }
+    showTable();
+    function del(line) {
+        delete persons[line];
+        showTable();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function max(a, b) {
+        return a > b ? a : b;
+    }
+    function f(x) {
+        return 10 * x + 22;
+    }
+    var a = f;
+
+    var xiaoMianGuan = {
+        name: "老官面",
+        address: "银盆岭南路88号",
+        phone: "0625150552",
+        paoMian: function (a) {
+            var caidan = ["红烧牛肉面", "牛肉面", "刀削面"]
+            return caidan[a];
+        }
+    }
+
+    var mian = xiaoMianGuan.paoMian(1);
+    console.log(mian);
+
+    var oneDayThing = [function () {
+        console.log(`
+        起床
+        `)
+    }, function () {
+        console.log(`
+        睡觉
+        `)
+    }]
+    for (var i in oneDayThing) {
+        oneDayThing[i]();
+    }
+    var shengXiao =['狗','鸡','猴','羊','马','蛇','龙','兔','虎','牛','鼠','猪'];
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #root {
+            width: 1000px;
+            display: flex; /* 采用flex布局*/
+            flex-wrap: wrap; /* flex布局换行*/
+        }
+
+        #head {
+
+            height: 100px;;
+        }
+
+        #middle {
+            display: flex; /* 采用布局换行*/
+        }
+
+        #foot {
+
+            height: 100px;
+        }
+
+        #left {
+
+            width: 300px;
+        }
+
+        #right {
+
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="head" class="aaa.bbb.ccc">
+        <h1>这是啥</h1>
+    </div>
+    <div id="middle">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+    <div id="foot"></div>
+</div>
+<script>
+    if (true) { /* if/for/等语句块没有作用域*/
+        let a = 10;
+        console.log(a);
+    }
+    //  Math.PI  128 常量，已经定义不允许修改
+
+    const inden = 326151551525155;// 第一层：可以包含 数字 小写  大写  $  _
+    // inden=2222;
+
+    //1驼峰命名。2pasic命名 3，下划线命名 4，匈牙利命名
+
+    for (var i = 0; i < 10; i++);
+    console.log(i);
+
+    /* 应用程序三要素；
+     输入
+     输出
+     数据处理*/
+    //          var a = 10;//声明并赋值一个变量
+    //          var b;
+    //          b = 20;
+    //          function  test(){
+    //              var c = 30;
+    //          }
+    //   console.log();
+    //内部可以访问外部的变量
+    //外部不能访问内部的变量
+</script>
+</body>
+</html>

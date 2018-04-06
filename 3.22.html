@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style> /*css负责页面的样式，和显示方式*/
+     .haha{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+      }
+        #title{
+            font-size: 50px;
+        }
+        .left{
+            position: absolute;
+            left: 10px;
+        }
+        .right{
+            position: absolute;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1 onclick="taozou(this)" class="left"> </h1><!-- <html负责页面的内容-->
+<div id="zzz"></div>
+      </html负责页面的内容-->
+<script>  /*javascript  页面的动态效果  并且可以干其它两种技术可以干的事情*/
+      /*  aa.classList.add('haha')加一个元素
+       aa.classList.remove('haha') 删除一个元素
+       aa.id='title'
+       */
+          //number，string，boolean，undefined，null(空的指针)
+      //数据处理， -----------运算
+function  taozou(a){
+    console.log(a);//这个，自己
+    //判断当前这个东西在哪里，
+    if(a.classList.contains('left')){
+         // 如果他在左边，我就让他去右边
+        a.classList.remove('left');
+        a.classList.add('right')
+    }else{
+        // 如果再右边，我就让她去左边
+         a.classList.remove('right');
+         a.classList.add('left')
+    }
+    document.onscroll = function (e){
+        e.stopPropagation()
+        alert("坦克")
+    }
+
+}
+       //应用程序的主要区域就是操作内容
+        var num = 0; /*申明变量的格式*/
+/*setTimeout(,);延迟是件*/
+       setInterval(function(){
+            var dd = document.querySelector("h1");
+           if(num++ %2== 0){
+
+               dd.innerHTML = "离离原上草";
+               dd.style.color = 'pink';
+           }else{
+                dd.innerHTML = "一岁一枯荣";
+                dd.style.color = '#8f0';
+           }
+       if(num == 1){
+               dd.classList.add('haha');
+               dd.id=('title')
+           }
+
+       },2000);
+  /*  document.title = "二手网"
+    var hh = document.querySelector("h1");
+    hh.innerHTML = "二手网"*/
+</script>
+</body>
+</html>
+
+
+<!--
+做一个广告，再也没的左边上下飘动，每5秒走一次，该广告上有一个关闭按钮，
+但是该按钮被点击的时候，这个广告会跑到另一边。-->
+
+
+   <!--商场打折：满200减10十元，并且全场75折  买了350元商品，最后应该支付多少钱
+
+    2.做一个账单
+    商品名         数量        单价          总价
+    乔丹牌篮球鞋   1双 998
+    黑人牙膏       5支 20元每支   100元
+    金俊眉顶级茶叶    1.25两   328元/两   410元-->

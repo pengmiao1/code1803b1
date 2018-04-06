@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 100%;
+            height: 30px;
+            background: #ffe200;
+        }
+        td{
+            border: 1px solid #CCCCCC;
+            color: #e616a5;
+        }
+    </style>
+</head>
+<body>
+<table  id="tbl">
+    <tr>
+        <td>商品名</td>
+        <td>数量</td>
+        <td>单价</td>
+        <td>总价</td>
+    </tr>
+     <tr>
+        <td>乔丹牌篮球鞋</td>
+        <td>1双</td>
+        <td>998</td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>黑人牙膏</td>
+        <td>5支</td>
+        <td>20元/支</td>
+        <td></td>
+    </tr>
+     <tr>
+        <td>金俊眉顶级</td>
+        <td>1.25两</td>
+        <td>328元/两</td>
+        <td></td>
+    </tr>
+</table>
+<script>
+    //获取表格元素
+    var tbl = document.getElementById('tbl');
+    //获取每一行
+    var trs = tbl.getElementsByTagName('tr');
+    //获取一行中的单元格
+    for(var i =1;i<trs.length;i++){
+    var tds = trs[i].getElementsByTagName('td');
+    //
+    tds[3].innerText = parseFloat( tds[1].innerText)
+            * parseFloat(tds[2].innerText) + "元";
+
+        if(i%2==1)
+        //隔行换色
+        trs[i].style.background = '#efefef'
+}
+//for(;;){alert("222")} 无限循环
+  /* var b;
+    if (b){
+        alert("答对了")
+    }*/
+    var age=prompt("请输入您的年龄")
+    age*=1;
+     if(age>5){
+         alert("大人了")
+     }else  if (age>15){
+         alert("不是小鬼了");//这句话永远不会生效，
+     }else {
+         alert("小鬼头")
+     }
+
+
+</script>
+</body>
+</html>

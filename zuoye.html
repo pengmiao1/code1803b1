@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>`</title>
+</head>
+<body>
+<table id="tbl">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>段位</td>
+        <td>编辑</td>
+    </tr>
+</table>
+<button onclick="add()">添加</button>
+<form id="ff" style="display: none" >
+
+    <input type="text" id="uname" name="uname">
+    <input type="button"  value="确认" onclick="addTr()">
+    <input type="button"  value="确认修改" onclick="updateTr()">
+
+         <table>
+           <tr>
+           <td>年龄:</td>
+        <td><input id="userName" name="userName"></td>
+         </tr>
+         </table>
+
+    <select name="duanwei" id="bt" >
+    <option value="青铜">青铜</option>
+     <option value="王者">王者</option>
+      <option value="黄金">黄金</option>
+    </select>
+    <select name="xingbie" id="bh">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+
+</form>
+<script>
+   var tbl =  document.getElementById('tbl')
+   var num = 0;
+   function add(){
+        var ff= document.getElementById('ff')
+        ff.style.display='block'
+   }
+
+   function  addTr(){
+
+  var uname =  document.getElementById('uname')
+
+    var str = ` <tr id="haha${++num}">
+        <td>${uname.value}</td>
+        <td>${userName.value}</td>
+        <td>${bh.value}</td>
+        <td>${bt.value}</td>
+        <td><a  href="javascript:del(${num})">删除</a>|<a href="javascript:update(${num})">更新 </a></td>
+    </tr>`;
+       tbl.innerHTML+=str;
+       ff.style.display='none'
+   }
+function  del (e){
+   var tr = document.getElementById("haha"+e);
+    tr.remove();
+}
+    var updateTrr = null;
+    function  update(e){
+        var tr = document.getElementById("haha"+e);
+        updateTrr = tr;
+       var uName =   tr.children[0].innerText;
+       var ff =  document.getElementById('ff');
+        ff.uname.value = uName;
+    }
+
+    function updateTr(){
+           var ff =  document.getElementById('ff');
+         updateTrr.children[0].innerText =   ff.uname.value
+    }
+</script>
+</body>
+</html>

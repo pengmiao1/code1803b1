@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  rel="stylesheet" href="mav.css">
+    <style>
+        #root{
+            width: 700px;
+            margin: 0 auto;
+            position: relative; /*如果子元素的绝对要基于父元素*/
+            min-height: 780px; /*最小高度*/
+        }
+        #head{
+
+        }
+        .mid{ /*左边和右边的共同点*/
+            position: absolute; /*绝对定位*/
+            min-height: 500px;
+            top: 130px;
+        }
+        #left{
+
+            width: 280px;
+            padding: 20px;
+            background-image: url("1110.jpg");
+            position: absolute;
+            left: 50px;
+        }
+        #left li{
+            width: 240px;
+            height: 30px;
+            border: 1px solid #ccc;
+
+
+        }
+        #left li:hover a{
+            background: orangered;
+        }
+
+         #left li>a{
+                 line-height: 30px;
+                 text-decoration: none;
+                 color: #07e4bb;
+                 margin-left: 10px;
+         }
+        #right{
+            left:375px;
+            right: 0;
+
+            width: 420px;
+
+        }
+        #foot{
+
+            height: 150px;
+            position: absolute;
+            width: 700px;
+            bottom: 0;
+            left: -125px;
+        }
+        #logo{
+            height: 100px;
+            overflow: hidden;
+        }
+        #xuanyan{
+
+                     color: #fff;
+                     font-size: 25px;
+                     position: absolute;
+                     top: 35px;
+                     left: 140px;
+               }
+         #logo h1{
+             display:inline;
+         }
+        .yincang{
+            display: none;
+        }
+
+#cc{
+        position: absolute;
+        width: 500px;
+        height: 20px;
+}
+        #dd{
+                position: absolute;
+                left: 18px;
+                top: 6px;
+                color: #e616a5;
+        }
+        #as{
+               position: absolute;
+               left: 70px;
+        }
+        #az{
+            position: absolute;
+            left: 140px;
+        }
+        #at{
+               position: absolute;
+               left: 145px;
+        }
+        #ay{
+                position: absolute;
+                left: 240px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="head">
+
+        <div id="logo" >
+
+            <img src="timg0AHHQSDH.jpg" >
+            <span id="xuanyan">Thank you for working hard today</span>
+        </div>
+    <ul id="mav">
+        <li><div class="li-before">迪丽热巴</div><div class="liafter">迪丽热巴</div></li>
+        <li><div class="li-before">迪丽热巴</div><div class="liafter">迪丽热巴</div></li>
+        <li><div class="li-before">迪丽热巴</div><div class="liafter">迪丽热巴</div></li>
+        <li><div class="li-before">迪丽热巴</div><div class="liafter">迪丽热巴</div></li>
+        <li><div class="li-before">迪丽热巴</div><div class="liafter">迪丽热巴</div></li>
+        <li><div class="li-before">迪丽热巴</div><div class="liafter">迪丽热巴</div></li>
+
+    </ul></div>
+    <div id="left" class="mid">
+        <ul>
+            <li><a href="javascript:show(0)">用户登录</a></li>
+            <li><a href="javascript:show(1)">新增用户</a></li>
+            <li><a href="javascript:show(2)">修改用户</a></li>
+            <li><a href="javascript:show(3)">充值</a></li>
+
+        </ul>
+    </div>
+    <div id="right" class="mid">
+        <div class="child-content yincang">
+          <table id="dd">
+              <tr>
+                  <td>用户名：</td>
+                  <td><input  name="userName"  placeholder="请输入用户名"></td>
+              </tr>
+
+               <tr>
+                  <td>密码：</td>
+                  <td><input  name="pass"  placeholder="请输入6-11的密码"></td>
+              </tr>
+
+                <td>验证码：</td>
+                 <td><input  name="pas"  placeholder="请输入6位数字的验证码"></td>
+              <tr>
+              <td>
+                  <button  id="as">登录</button>
+                  <button id="az">重置</button>
+              </td>
+              </tr>
+          </table>
+        </div>
+        <div class="child-content yincang">
+         <table id="cc">
+              <tr>
+                  <td>用户：</td>
+                  <td><input  name="userName"  placeholder="请输入用户名"></td>
+              </tr>
+               <tr>
+                  <td>密码：</td>
+                  <td><input  name="pass"  placeholder="请输入6-11的密码"></td>
+              </tr>
+             <td>手机号：</td>
+                 <td><input  name="pass"  placeholder="请输入11位数字的手机号"></td>
+             <tr>
+                <td >验证码：</td>
+                 <td><input   name="pass"  placeholder="请输入6位数字的验证码"></td>
+              </tr>
+                  <tr>
+					<td>出生日期:</td>
+					<td>
+						<input type="date" name="birthday">
+					</td>
+				 </tr>
+             <tr>
+                 <td>
+                     <button id="at">注册</button>
+                     <button id="ay">重置</button>
+                 </td>
+             </tr>
+          </table>
+        </div>
+        <div class="child-content yincang">
+            修改用户
+        </div>
+        <div class="child-content yincang">
+            <img src="微信图片_20180320210632.jpg" alt="">
+        </div>
+    </div>
+    <div id="foot">
+        <img src="120.jpg">
+
+
+    </div>
+</div>
+<script>
+   var rr = document.getElementById('right');
+
+    function  show(e){
+
+        for(var i=0;i<4;i++){ /*因为有四个元素*/
+             if(e==i){ /*被点击的当前对应的div*/
+                 rr.children[e].classList.remove('yincang');
+             }else { /*其他的div*/
+                  rr.children[i].classList.add('yincang');
+             }
+        }
+    }
+</script>
+</body>
+</html>

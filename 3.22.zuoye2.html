@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告</title>
+    <style>
+
+
+
+
+
+
+        .b{
+              position:fixed;
+              transition:all 5s;
+              animation:  b infinite 10s;
+        }
+        @keyframes b {
+            50%{
+                transform: translate(0px,400px);
+            }
+            100%{
+                transform: translate(0px,0px);
+            }
+        }
+
+         .left{
+            position: absolute;
+            left: 10px;
+        }
+        .right {
+            position: absolute;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+   <div onclick="taozou(this)" class="left">
+  <span class="b"><img src="timgW21TFFO1.jpg"> </span>
+
+    </div>
+
+
+   <script>
+      function taozou(a) {
+          console.log(a);
+
+          if (a.classList.contains('left')) {
+              a.classList.remove('left');
+              a.classList.add('right')
+          } else {
+              a.classList.remove('right');
+              a.classList.add('left')
+          }
+      };
+
+   </script>
+</body>
+</html>
